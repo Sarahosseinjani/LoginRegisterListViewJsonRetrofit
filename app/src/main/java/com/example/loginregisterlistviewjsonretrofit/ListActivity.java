@@ -1,14 +1,21 @@
 package com.example.loginregisterlistviewjsonretrofit;
 
-import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import java.util.ArrayList;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -16,10 +23,15 @@ import retrofit2.Retrofit;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 //get help from https://demonuts.com/android-retrofit/#list
-public class ListActivity extends AppCompatActivity {
+public class ListActivity extends AppCompatActivity  {
+
+    public static final int MobileData = 2;
+    public static final int WifiData = 1;
 
     private ListView listView;
     private ListAdaptor listAdapter;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,8 +39,30 @@ public class ListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_list);
 
         listView = findViewById(R.id.lv);
+        //Live data object and setting an observer on it
+        ConnectionLiveData connectionLiveData = new ConnectionLiveData(getApplicationContext());
+        connectionLiveData.observe(this, new Observer<ConnectionModel>() {
+            @Override
+            public void onChanged(@Nullable ConnectionModel connection) {
+                //every time connection state changes, we'll be notified and can perform action accordingly
+                if (connection.getIsConnected()) {
+                    switch (connection.getType()) {
+                        case WifiData:
+                            Toast.makeText(getApplicationContext(), String.format("Wifi turned ON"), Toast.LENGTH_SHORT).show();
+                            getJSONResponse();
+                            break;
+                        case MobileData:
+                            Toast.makeText(getApplicationContext(), String.format("Mobile data turned ON"), Toast.LENGTH_SHORT).show();
+                            getJSONResponse();
+                            break;
+                    }
+                } else {
+                    Toast.makeText(getApplicationContext(), String.format("Connection turned OFF"), Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
-        getJSONResponse();
+        //getJSONResponse();
 
     }
 
@@ -48,7 +82,7 @@ public class ListActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
                 Log.i("Responsestring", response.body().toString());
-                //Toast.makeText()
+
                 if (response.isSuccessful()) {
                     if (response.body() != null) {
                         Log.i("onSuccess", response.body().toString());
@@ -101,4 +135,5 @@ public class ListActivity extends AppCompatActivity {
         }
 
     }
+
 }
