@@ -1,4 +1,4 @@
-package com.example.loginregisterlistviewjsonretrofit;
+package com.example.loginregisterlistviewjsonretrofit.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.loginregisterlistviewjsonretrofit.R;
+import com.example.loginregisterlistviewjsonretrofit.model.UserDao;
+import com.example.loginregisterlistviewjsonretrofit.model.UserDatabase;
+import com.example.loginregisterlistviewjsonretrofit.model.UserEntity;
 
 public class RegisterActivity extends AppCompatActivity {
 

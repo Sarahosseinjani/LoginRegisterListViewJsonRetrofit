@@ -9,8 +9,10 @@ import android.net.NetworkInfo;
 
 import androidx.lifecycle.LiveData;
 
-import static com.example.loginregisterlistviewjsonretrofit.ListActivity.MobileData;
-import static com.example.loginregisterlistviewjsonretrofit.ListActivity.WifiData;
+import com.example.loginregisterlistviewjsonretrofit.viewModel.ConnectionModel;
+
+import static com.example.loginregisterlistviewjsonretrofit.view.ListActivity.MobileData;
+import static com.example.loginregisterlistviewjsonretrofit.view.ListActivity.WifiData;
 
 //get help from https://medium.com/android-news/connection-detection-using-livedata-android-623bd02b0e30
 public class ConnectionLiveData extends LiveData<ConnectionModel> {

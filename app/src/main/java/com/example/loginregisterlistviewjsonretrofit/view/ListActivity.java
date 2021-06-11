@@ -1,4 +1,4 @@
-package com.example.loginregisterlistviewjsonretrofit;
+package com.example.loginregisterlistviewjsonretrofit.view;
 
 
 import android.os.Bundle;
@@ -9,6 +9,13 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
+
+import com.example.loginregisterlistviewjsonretrofit.ConnectionLiveData;
+import com.example.loginregisterlistviewjsonretrofit.viewModel.ConnectionModel;
+import com.example.loginregisterlistviewjsonretrofit.adaptor.ListAdaptor;
+import com.example.loginregisterlistviewjsonretrofit.viewModel.ModelListView;
+import com.example.loginregisterlistviewjsonretrofit.MyInterface;
+import com.example.loginregisterlistviewjsonretrofit.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;

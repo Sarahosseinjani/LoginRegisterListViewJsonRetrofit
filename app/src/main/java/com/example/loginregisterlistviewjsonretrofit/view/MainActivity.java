@@ -1,10 +1,9 @@
-package com.example.loginregisterlistviewjsonretrofit;
+package com.example.loginregisterlistviewjsonretrofit.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
-import android.database.Cursor;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -13,6 +12,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.loginregisterlistviewjsonretrofit.R;
+import com.example.loginregisterlistviewjsonretrofit.model.UserDao;
+import com.example.loginregisterlistviewjsonretrofit.model.UserDatabase;
+import com.example.loginregisterlistviewjsonretrofit.model.UserEntity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -83,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //if you don't have any account go to register page
-                startActivity(new Intent(MainActivity.this,RegisterActivity.class));
+                startActivity(new Intent(MainActivity.this, RegisterActivity.class));
                 finish();
             }
         });

@@ -1,4 +1,4 @@
-package com.example.loginregisterlistviewjsonretrofit;
+package com.example.loginregisterlistviewjsonretrofit.viewModel;
 
 public class ModelListView {
     private String name, email, imgURL;

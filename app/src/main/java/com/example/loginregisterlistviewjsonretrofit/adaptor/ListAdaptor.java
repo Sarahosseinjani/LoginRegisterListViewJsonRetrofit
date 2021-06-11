@@ -1,4 +1,4 @@
-package com.example.loginregisterlistviewjsonretrofit;
+package com.example.loginregisterlistviewjsonretrofit.adaptor;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,6 +7,9 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.loginregisterlistviewjsonretrofit.viewModel.ModelListView;
+import com.example.loginregisterlistviewjsonretrofit.R;
 import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 

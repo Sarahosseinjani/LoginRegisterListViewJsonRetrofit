@@ -1,4 +1,4 @@
-package com.example.loginregisterlistviewjsonretrofit;
+package com.example.loginregisterlistviewjsonretrofit.model;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;

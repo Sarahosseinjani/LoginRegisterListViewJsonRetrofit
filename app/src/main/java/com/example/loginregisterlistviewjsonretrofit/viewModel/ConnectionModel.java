@@ -1,4 +1,4 @@
-package com.example.loginregisterlistviewjsonretrofit;
+package com.example.loginregisterlistviewjsonretrofit.viewModel;
 
 //this class contains the type and connected state
 public class ConnectionModel {
