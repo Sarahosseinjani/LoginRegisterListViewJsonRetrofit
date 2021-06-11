@@ -58,7 +58,7 @@ public class ListAdaptor extends BaseAdapter {
             holder = new ViewHolder();
             LayoutInflater inflater = (LayoutInflater) context
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = inflater.inflate(R.layout.list_view, null, true);
+            convertView = inflater.inflate(R.layout.json_info_row, null, true);
 
             holder.iv = (ImageView) convertView.findViewById(R.id.iv);
             holder.tvname = (TextView) convertView.findViewById(R.id.name);
